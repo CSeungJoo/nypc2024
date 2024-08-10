@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _3 {
 
@@ -11,11 +11,13 @@ public class _3 {
             int A = sc.nextInt();
             int B = sc.nextInt();
 
-            System.out.println(solution(A, B, 1));
+            System.out.println(solution(A, B));
         }
     }
-    public static int solution(int a, int b, int cnt) {
-        if (3 < Math.max(a, b) / Math.min(a, b))
+    public static int solution(int a, int b) {
+        int calc = Math.max(a, b) / Math.min(a, b);
+        int remain = Math.max(a, b) % Math.min(a, b) >= 1 ? 1 : 0;
+        if (3 < calc + remain || a == 0 || b == 0)
             return -1;
         else
             return (a + b + 3) / 4;
@@ -48,3 +50,7 @@ public class _3 {
 // 6 2
 // 7 2 x
 // 7 3
+// 7 4
+// 7 5
+// 7 6
+// 7 7
